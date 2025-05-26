@@ -52,6 +52,8 @@ class _SplashScreenState extends State<SplashScreen>
     });
   }
 
+  
+
   _haldleNavigation(BuildContext context) {
     if (_hasNavigated) {
       return;
@@ -69,6 +71,12 @@ class _SplashScreenState extends State<SplashScreen>
       //Navigated to Home Screen
       Get.offNamed(AppRoutes.login);
     }
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
