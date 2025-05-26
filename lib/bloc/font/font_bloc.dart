@@ -1,5 +1,5 @@
-import 'package:e_learning_app/bloc/font_event.dart';
-import 'package:e_learning_app/bloc/font_state.dart';
+import 'package:e_learning_app/bloc/font/font_event.dart';
+import 'package:e_learning_app/bloc/font/font_state.dart';
 import 'package:e_learning_app/services/font_services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';

@@ -1,4 +1,4 @@
-import 'package:e_learning_app/bloc/font_state.dart';
+import 'package:e_learning_app/bloc/font/font_state.dart';
 import 'package:e_learning_app/core/theme/app_colors..dart';
 import 'package:e_learning_app/core/theme/app_typography.dart';
 import 'package:e_learning_app/services/font_services.dart';
@@ -21,13 +21,15 @@ class AppTheme {
       textTheme: FontServices.getCustomTextTheme(AppTypography.lightTextTheme,
           fontState.fontScale, fontState.fontFamily),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 16))),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.primary,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          padding: const EdgeInsets.symmetric(vertical: 16),
+        ),
+      ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.lightSurface,

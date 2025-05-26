@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTypography {
   static TextTheme lightTextTheme = TextTheme(
     displayLarge: GoogleFonts.poppins(
-      fontSize: 32,
+      fontSize: 5,
       fontWeight: FontWeight.bold,
       color: AppColors.lightText,
     ),
