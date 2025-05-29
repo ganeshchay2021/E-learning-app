@@ -1,11 +1,11 @@
 import 'package:e_learning_app/core/theme/app_colors..dart';
+import 'package:e_learning_app/core/utils/validator.dart';
 import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import '../../widgets/custom_button.dart';
-import '../../widgets/textform_field_widget.dart';
+import '../../widgets/custom_textfield_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,6 +17,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -77,117 +79,130 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Padding(
               padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  //email field
-                  TextformFieldWidget(
-                    controller: emailController,
-                    hintText: 'Email',
-                    icon: Icons.email,
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  //password Field
-                  TextformFieldWidget(
-                    controller: passwordController,
-                    hintText: 'Password',
-                    icon: Icons.lock,
-                    isPasswordField: true,
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  //forgot password
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {
-                        Get.toNamed(AppRoutes.forgotPassword);
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    //email field
+                    CustonTextField(
+                      textInputType: TextInputType.emailAddress,
+                      focusNode: FocusNode(),
+                      controller: emailController,
+                      labelText: 'Email',
+                      prefixIcon: Icons.email,
+                      validator: (value) {
+                        return FormValidator.validateEmail(value);
                       },
-                      child: Text(
-                        "Forgot Password?",
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                      ),
                     ),
-                  ),
-
-                  CustomButton(
-                    text: 'Login',
-                    onPressed: () {},
-                  ),
-
-                  const SizedBox(
-                    height: 25,
-                  ),
-
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          color: Colors.grey.shade300,
-                        ),
-                      ),
-                      const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: Text('Or continue with')),
-                      Expanded(
-                        child: Divider(
-                          color: Colors.grey.shade300,
-                        ),
-                      )
-                    ],
-                  ),
-
-                  const SizedBox(
-                    height: 25,
-                  ),
-
-                  //social login
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _socialLoginButton(
-                        icon: Icons.g_mobiledata,
-                        onPressed: () {},
-                      ),
-                      _socialLoginButton(
-                        icon: Icons.facebook,
-                        onPressed: () {},
-                      ),
-                      _socialLoginButton(
-                        icon: Icons.apple,
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(
-                    height: 20,
-                  ),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don't have account?",
-                        style: TextStyle(color: Theme.of(context).primaryColor),
-                      ),
-                      TextButton(
+                
+                    const SizedBox(height: 25),
+                
+                    //password Field
+                    CustonTextField(
+                      controller: passwordController,
+                      focusNode: FocusNode(),
+                      obscureText: true,
+                      labelText: 'Password',
+                      prefixIcon: Icons.lock_outline,
+                      isPasswordField: true,
+                      validator: (value) {
+                        return FormValidator.validatePassword(value);
+                      },
+                    ),
+                
+                    const SizedBox(height: 10),
+                
+                    //forgot password
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
                         onPressed: () {
-                        Get.toNamed(AppRoutes.signup);
+                          Get.toNamed(AppRoutes.forgotPassword);
                         },
                         child: Text(
-                          "Register",
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          "Forgot Password?",
+                          style: TextStyle(color: Theme.of(context).primaryColor),
                         ),
                       ),
-                    ],
-                  )
-                ],
+                    ),
+                
+                    CustomButton(
+                      text: 'Login',
+                      onPressed: () {},
+                    ),
+                
+                    const SizedBox(
+                      height: 25,
+                    ),
+                
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            color: Colors.grey.shade300,
+                          ),
+                        ),
+                        const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: Text('Or continue with')),
+                        Expanded(
+                          child: Divider(
+                            color: Colors.grey.shade300,
+                          ),
+                        )
+                      ],
+                    ),
+                
+                    const SizedBox(
+                      height: 25,
+                    ),
+                
+                    //social login
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        _socialLoginButton(
+                          icon: Icons.g_mobiledata,
+                          onPressed: () {},
+                        ),
+                        _socialLoginButton(
+                          icon: Icons.facebook,
+                          onPressed: () {},
+                        ),
+                        _socialLoginButton(
+                          icon: Icons.apple,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                
+                    const SizedBox(
+                      height: 20,
+                    ),
+                
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have account?",
+                          style: TextStyle(color: Theme.of(context).primaryColor),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Get.toNamed(AppRoutes.signup);
+                          },
+                          child: Text(
+                            "Register",
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],
