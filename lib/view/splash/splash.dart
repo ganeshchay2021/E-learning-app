@@ -39,6 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     animationController.forward();
+    
     initialized();
   }
 

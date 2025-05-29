@@ -1,6 +1,8 @@
 import 'package:e_learning_app/core/theme/app_colors..dart';
+import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/custom_button.dart';
 import '../../widgets/textform_field_widget.dart';
@@ -100,7 +102,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRoutes.forgotPassword);
+                      },
                       child: Text(
                         "Forgot Password?",
                         style: TextStyle(color: Theme.of(context).primaryColor),
@@ -170,7 +174,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(color: Theme.of(context).primaryColor),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                        Get.toNamed(AppRoutes.signup);
+                        },
                         child: Text(
                           "Register",
                           style: TextStyle(
