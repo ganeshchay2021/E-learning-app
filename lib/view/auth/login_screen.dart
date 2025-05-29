@@ -90,13 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: emailController,
                       labelText: 'Email',
                       prefixIcon: Icons.email,
-                      validator: (value) {
-                        return FormValidator.validateEmail(value);
-                      },
+                      validator: FormValidator.validateEmail,
                     ),
-                
+
                     const SizedBox(height: 25),
-                
+
                     //password Field
                     CustonTextField(
                       controller: passwordController,
@@ -105,13 +103,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       labelText: 'Password',
                       prefixIcon: Icons.lock_outline,
                       isPasswordField: true,
-                      validator: (value) {
-                        return FormValidator.validatePassword(value);
-                      },
+                      validator: FormValidator.validatePassword,
                     ),
-                
+
                     const SizedBox(height: 10),
-                
+
                     //forgot password
                     Align(
                       alignment: Alignment.centerRight,
@@ -121,20 +117,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           "Forgot Password?",
-                          style: TextStyle(color: Theme.of(context).primaryColor),
+                          style:
+                              TextStyle(color: Theme.of(context).primaryColor),
                         ),
                       ),
                     ),
-                
+
                     CustomButton(
                       text: 'Login',
                       onPressed: () {},
                     ),
-                
+
                     const SizedBox(
                       height: 25,
                     ),
-                
+
                     Row(
                       children: [
                         Expanded(
@@ -152,11 +149,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         )
                       ],
                     ),
-                
+
                     const SizedBox(
                       height: 25,
                     ),
-                
+
                     //social login
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -175,17 +172,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                
+
                     const SizedBox(
                       height: 20,
                     ),
-                
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           "Don't have account?",
-                          style: TextStyle(color: Theme.of(context).primaryColor),
+                          style:
+                              TextStyle(color: Theme.of(context).primaryColor),
                         ),
                         TextButton(
                           onPressed: () {

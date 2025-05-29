@@ -1,6 +1,7 @@
 import 'package:e_learning_app/core/theme/app_colors..dart';
 import 'package:e_learning_app/models/onboarding_items.dart';
 import 'package:e_learning_app/routes/app_routes.dart';
+import 'package:e_learning_app/services/storage_services.dart';
 import 'package:e_learning_app/view/onboarding/widgets/onboarding_screen_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,6 +36,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   ];
 
   int _currentIndex = 0;
+
+  void _onCompletedOnBoarding() async {
+    await StorageServices.setFirstTime(false);
+    Get.offAll(AppRoutes.login);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,9 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             top: 50,
             right: 20,
             child: TextButton(
-              onPressed: () {
-                Get.offAllNamed(AppRoutes.login);
-              },
+              onPressed: _onCompletedOnBoarding,
               child: const Text(
                 'Skip',
                 style: TextStyle(
@@ -111,7 +116,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         curve: Curves.easeIn,
                       );
                     } else {
-                      Get.offAllNamed(AppRoutes.login);
+                      _onCompletedOnBoarding;
                     }
                   },
                   child: Text(

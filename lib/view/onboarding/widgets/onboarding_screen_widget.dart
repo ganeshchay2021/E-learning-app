@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:e_learning_app/core/theme/app_colors..dart';
 import 'package:e_learning_app/models/onboarding_items.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 
 class OnboardingScreenWidget extends StatelessWidget {
   final OnboardingItems items;

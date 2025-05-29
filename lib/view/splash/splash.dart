@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
       Get.offNamed(AppRoutes.onBoarding);
     } else if (authState.userModel != null) {
       //Navigated to Home Screen
-      Get.offNamed(AppRoutes.home);
+      // Get.offNamed(AppRoutes.home);
     } else {
       //Navigated to Home Screen
       Get.offNamed(AppRoutes.login);

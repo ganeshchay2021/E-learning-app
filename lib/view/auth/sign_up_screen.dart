@@ -4,7 +4,6 @@ import 'package:e_learning_app/models/user_model.dart';
 import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textfield_widget.dart';
 
@@ -23,7 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
-  UserRole? userRole;
+  UserRole? _selectedRole;
 
   @override
   void dispose() {
@@ -110,9 +109,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       labelText: 'Name',
                       focusNode: FocusNode(),
                       prefixIcon: Icons.person_outline,
-                      validator: (value) {
-                        return FormValidator.validateFullName(value);
-                      },
+                      validator: FormValidator.validateFullName,
                     ),
 
                     const SizedBox(height: 25),
@@ -123,9 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       controller: emailController,
                       labelText: 'Email',
                       prefixIcon: Icons.email_outlined,
-                      validator: (value) {
-                        return FormValidator.validateEmail(value);
-                      },
+                      validator: FormValidator.validateEmail,
                     ),
 
                     const SizedBox(height: 25),
@@ -137,9 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       labelText: 'Password',
                       prefixIcon: Icons.lock_outline,
                       obscureText: true,
-                      validator: (value) {
-                        return FormValidator.validatePassword(value);
-                      },
+                      validator: FormValidator.validatePassword,
                     ),
                     const SizedBox(height: 25),
 
@@ -155,12 +148,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             value, passwordController.text);
                       },
                     ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+
+                    DropdownButtonFormField<UserRole>(
+                      value: _selectedRole,
+                      decoration: InputDecoration(
+                        labelText: 'Role',
+                        prefixIcon: const Icon(Icons.person_outline),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide:
+                                BorderSide(color: Colors.grey.shade300)),
+                      ),
+                      items: UserRole.values.map((role) {
+                        return DropdownMenuItem(
+                            value: role,
+                            child: Text(
+                                role.toString().split('.').last.capitalize!));
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedRole = value;
+                        });
+                      },
+                    ),
 
                     const SizedBox(height: 25),
 
                     CustomButton(
                       text: 'Sign Up',
-                      onPressed: () {},
+                      onPressed: _handleSignUp,
                     ),
 
                     const SizedBox(
@@ -199,15 +218,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget _socialLoginButton(
-      {required IconData icon, required VoidCallback onPressed}) {
-    return CustomButton(
-      isOutlined: true,
-      height: 50,
-      isFullWidth: false,
-      icon: icon,
-      text: '',
-      onPressed: onPressed,
-    );
+  void _handleSignUp() {
+    if (_formKey.currentState!.validate() && _selectedRole != null) {
+      if (_selectedRole == UserRole.teacher) {
+        //navigate to teacher's home screen
+        Get.offAllNamed(AppRoutes.teacherHome);
+      } else {
+        //navigate to student's home screen
+        Get.offAllNamed(AppRoutes.home);
+      }
+    } else if (_selectedRole == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          duration: Duration(seconds: 1),
+          content: Text("Please select your role"),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 }
