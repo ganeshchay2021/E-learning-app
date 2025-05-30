@@ -4,8 +4,8 @@ import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_textfield.dart';
+import '../widgets/common/custom_button.dart';
+import '../widgets/common/custom_textfield.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -126,8 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     CustomButton(
                       text: 'Login',
                       onPressed: () {
-                        if(_formKey.currentState!.validate()){
-                          
+                        if (_formKey.currentState!.validate()) {
+                          Get.offAllNamed(AppRoutes.mainScreen);
                         }
                       },
                     ),

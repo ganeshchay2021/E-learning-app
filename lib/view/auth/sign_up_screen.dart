@@ -4,8 +4,8 @@ import 'package:e_learning_app/models/user_model.dart';
 import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_textfield.dart';
+import '../widgets/common/custom_button.dart';
+import '../widgets/common/custom_textfield.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -225,7 +225,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         Get.offAllNamed(AppRoutes.teacherHome);
       } else {
         //navigate to student's home screen
-        Get.offAllNamed(AppRoutes.home);
+        Get.offAllNamed(AppRoutes.mainScreen);
       }
     } else if (_selectedRole == null) {
       ScaffoldMessenger.of(context).showSnackBar(
