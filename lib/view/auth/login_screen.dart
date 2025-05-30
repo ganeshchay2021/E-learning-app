@@ -125,7 +125,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     CustomButton(
                       text: 'Login',
-                      onPressed: () {},
+                      onPressed: () {
+                        if(_formKey.currentState!.validate()){
+                          
+                        }
+                      },
                     ),
 
                     const SizedBox(

@@ -37,9 +37,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   int _currentIndex = 0;
 
-  void _onCompletedOnBoarding() async {
+  Future _onCompletedOnBoarding() async {
     await StorageServices.setFirstTime(false);
-    Get.offAll(AppRoutes.login);
+    Get.offAllNamed(AppRoutes.login);
   }
 
   @override

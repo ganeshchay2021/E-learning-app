@@ -76,70 +76,69 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //app Bar
-      appBar: AppBar(
-        //back button
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: const Icon(Icons.arrow_back_ios),
+    return SafeArea(
+      child: Scaffold(
+        //app Bar
+        appBar: AppBar(
+          //back button
+          leading: IconButton(
+            onPressed: () => Get.back(),
+            icon: const Icon(Icons.arrow_back_ios),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              //title
-              const Text(
-                "Forgot Password",
-                style: TextStyle(
-                  fontSize: 32,
-                  letterSpacing: 1,
-                  fontWeight: FontWeight.bold,
+        body: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //title
+                const Text(
+                  "Forgot Password",
+                  style: TextStyle(
+                    fontSize: 32,
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
+                const SizedBox(
+                  height: 10,
+                ),
 
-              //description
-              const Text(
-                "Enter your email address to reset your password",
-                style: TextStyle(
-                    fontSize: 16, letterSpacing: 1, color: Colors.grey),
-              ),
+                //description
+                const Text(
+                  "Enter your email address to reset your password",
+                  style: TextStyle(
+                      fontSize: 16, letterSpacing: 1, color: Colors.grey),
+                ),
 
-              const SizedBox(height: 25),
+                const SizedBox(height: 25),
 
-              //email field
-              CustonTextField(
-                focusNode: FocusNode(),
-                controller: emailController,
-                labelText: 'Email',
-                prefixIcon: Icons.email_outlined,
-                validator: FormValidator.validateEmail,
-              ),
+                //email field
+                CustonTextField(
+                  focusNode: FocusNode(),
+                  controller: emailController,
+                  labelText: 'Email',
+                  prefixIcon: Icons.email_outlined,
+                  validator: FormValidator.validateEmail,
+                ),
 
-              const SizedBox(height: 25),
+                const SizedBox(height: 25),
 
-              //button
-              CustomButton(
-                text: "Reset Password",
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _handleResetPassword();
-                  }
-                },
-              )
-            ],
+                //button
+                CustomButton(
+                  text: "Reset Password",
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _handleResetPassword();
+                    }
+                  },
+                )
+              ],
+            ),
           ),
         ),
       ),
