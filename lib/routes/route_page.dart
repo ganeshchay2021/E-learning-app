@@ -2,10 +2,14 @@ import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:e_learning_app/view/auth/forgot_password.dart';
 import 'package:e_learning_app/view/auth/login_screen.dart';
 import 'package:e_learning_app/view/auth/sign_up_screen.dart';
+import 'package:e_learning_app/view/courses/widget/course_list_screen.dart';
 import 'package:e_learning_app/view/home/home_Screen.dart';
 import 'package:e_learning_app/view/home/teacher_home_screen.dart';
 import 'package:e_learning_app/view/onboarding/onboarding_screen.dart';
+import 'package:e_learning_app/view/profile/profile_screen.dart';
+import 'package:e_learning_app/view/quiz/quiz_list_screen.dart';
 import 'package:e_learning_app/view/splash/splash.dart';
+import 'package:e_learning_app/view/widgets/main_screen.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -36,7 +40,27 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.home,
-      page: () =>const HomeScreen(),
+      page: () => const HomeScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.mainScreen,
+      page: () => MainScreen(
+        initialIndex: Get.arguments is Map<String, dynamic>
+            ? Get.arguments['initialIndex'] as int?
+            : null,
+      ),
+    ),
+    GetPage(
+      name: AppRoutes.courseList,
+      page: () => const CourseListScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.quizList,
+      page: () => const QuizListScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.profile,
+      page: () => const ProfileScreen(),
     ),
   ];
 }
