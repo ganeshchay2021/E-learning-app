@@ -21,11 +21,11 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> pages = const [
+  List<Widget> pages = [
     HomeScreen(),
-    CourseListScreen(),
-    QuizListScreen(),
-    ProfileScreen(),
+    const CourseListScreen(),
+    const QuizListScreen(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
