@@ -16,7 +16,7 @@ class CourseModel {
   final List<String> requirements;
   final List<String> whatYouWillLearn;
   final DateTime createdAt;
-  final DateTime updated;
+  final DateTime updatedAt;
   final bool isPremium;
 
   CourseModel({
@@ -35,7 +35,7 @@ class CourseModel {
     required this.requirements,
     required this.whatYouWillLearn,
     required this.createdAt,
-    required this.updated,
+    required this.updatedAt,
     this.isPremium = false,
   });
 
@@ -58,7 +58,7 @@ class CourseModel {
         map['whatYouWillLearn'],
       ),
       createdAt: DateTime.parse(map['createdAt']),
-      updated: DateTime.parse(map['updated']),
+      updatedAt: DateTime.parse(map['updatedAt']),
       isPremium: map['isPremium'] ?? false,
     );
   }
@@ -79,7 +79,7 @@ class CourseModel {
         'requirements': requirements,
         'whatYouWillLearn': whatYouWillLearn,
         'createdAt': createdAt.toIso8601String(),
-        'updated': updated.toIso8601String(),
+        'updated': updatedAt.toIso8601String(),
         'isPremium': isPremium,
       };
 }

@@ -1,8 +1,8 @@
-import 'package:e_learning_app/models/chat_message_model.dart';
 import 'package:e_learning_app/models/lesson_model.dart';
 import 'package:e_learning_app/models/questions_model.dart';
 import 'package:e_learning_app/models/quize_attempt_model.dart';
 
+import '../models/chat_message_model.dart';
 import '../models/course_model.dart';
 import '../models/quize_model.dart';
 

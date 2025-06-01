@@ -4,7 +4,7 @@ class QuizeModel {
   final String id;
   final String title;
   final String description;
-  final int timelimit;
+  final int timeLimit;
   final List<QuestionsModel> questions;
   final DateTime createdAt;
   final bool isActive;
@@ -13,7 +13,7 @@ class QuizeModel {
     required this.id,
     required this.title,
     required this.description,
-    required this.timelimit,
+    required this.timeLimit,
     required this.questions,
     required this.createdAt,
     this.isActive = true,
@@ -24,7 +24,7 @@ class QuizeModel {
       id: map['id'] ?? '',
       title: map['title'] ?? '',
       description: map['description'] ?? '',
-      timelimit: map['timelimit'] ?? '',
+      timeLimit: map['timeLimit'] ?? '',
       questions: (map['questions'] as List<dynamic>)
           .map((questions) => QuestionsModel.fromJson(questions))
           .toList(),
@@ -37,7 +37,7 @@ class QuizeModel {
     return {
           'title': title,
       'description': description,
-      'timelimit': timelimit,
+      'timelimit': timeLimit,
       'questions': questions.map((questions)=> questions.toMap()).toList(),
       'createdAt': createdAt.toIso8601String(),
       'isActive': isActive,

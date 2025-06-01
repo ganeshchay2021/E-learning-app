@@ -3,7 +3,7 @@ import 'package:e_learning_app/view/auth/login_screen.dart';
 import 'package:e_learning_app/view/auth/sign_up_screen.dart';
 import 'package:e_learning_app/view/courses/widget/course_list_screen.dart';
 import 'package:e_learning_app/view/home/home_screen.dart';
-import 'package:e_learning_app/view/home/teacher_home_screen.dart';
+import 'package:e_learning_app/view/teacher/teacher_home_screen.dart';
 import 'package:e_learning_app/view/onboarding/onboarding_screen.dart';
 import 'package:e_learning_app/view/profile/profile_screen.dart';
 import 'package:e_learning_app/view/quiz/quiz_list_screen.dart';
@@ -74,7 +74,7 @@ class AppRoutes {
       //student home screen
       case home:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => HomeScreen(),
         );
 
       //main screen
