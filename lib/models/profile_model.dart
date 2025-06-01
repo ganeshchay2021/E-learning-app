@@ -59,6 +59,5 @@ class ProfileStats extends Equatable {
   });
 
   @override
-  // TODO: implement props
   List<Object?> get props => [courseCount, hoursSpent, successRate];
 }
