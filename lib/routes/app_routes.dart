@@ -74,7 +74,7 @@ class AppRoutes {
       //student home screen
       case home:
         return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          builder: (_) => const HomeScreen(),
         );
 
       //main screen

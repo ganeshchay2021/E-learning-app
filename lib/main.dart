@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<AuthBloc>(
           create: (context) => AuthBloc(),
-        )
+        ),
       ],
       child: BlocBuilder<FontBloc, FontState>(
         builder: (context, fontState) {
