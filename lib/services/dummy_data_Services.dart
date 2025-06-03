@@ -15,7 +15,7 @@ class DummyDataServices {
       title: 'Flutter Development Bootcamp',
       description:
           'Master Flutter and Dart from scratch. Build real-world cross-platform apps.',
-      imageUrl: 'https://i.ytimg.com/vi/z9k0cyk5t8s/maxresdefault.jpg',
+      imageUrl: 'https://i.ytimg.com/vi/z9kOcyk5t8s/maxresdefault.jpg',
       instructorId: 'inst_1',
       categoryId: '1',
       price: 99.99,
@@ -45,7 +45,7 @@ class DummyDataServices {
       description:
           'Learn professional UI/UX design from scratch using Figma and Adobe XD.',
       imageUrl:
-          'https://img.freepik.com/premium-psd/school-education-admission-youtube-thumbnail-web-banner-templat', // Note: URL might be truncated
+          'https://sokoskills.com/store/1097/Course%20Thumbnail/SE_Masterclass%20Template%2001.png', // Note: URL might be truncated
       instructorId: 'inst_2',
       categoryId: '2', // Design
       price: 79.99,
@@ -74,7 +74,7 @@ class DummyDataServices {
       id: "3",
       title: 'Digital Marketting Essentials',
       description: 'Master Digital Marketting Strategies for business growth',
-      imageUrl: 'imageUrl',
+      imageUrl: 'https://marketing.adrianhallberg.com/wp-content/uploads/2022/10/Digital-Marketing-Essentials.png',
       instructorId: 'inst_3',
       categoryId: '3',
       price: 89.99,
