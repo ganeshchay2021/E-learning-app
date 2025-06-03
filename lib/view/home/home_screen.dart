@@ -1,4 +1,5 @@
 import 'package:e_learning_app/services/dummy_data_Services.dart';
+import 'package:e_learning_app/view/home/widget/recomendation_section.dart';
 import 'package:flutter/material.dart';
 import 'widget/category_section.dart';
 import 'widget/home_app_bar.dart';
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 32,
                   ),
                   const InProgressSection(),
+                  const RecomendationSection()
                 ],
               ),
             ),
