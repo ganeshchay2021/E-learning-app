@@ -52,7 +52,10 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.courseList,
-      page: () => const CourseListScreen(),
+      page: () => CourseListScreen(
+        categoryId: Get.arguments?['category'] as String?,
+        categoryName: Get.arguments?['categoryName'] as String?,
+      ),
     ),
     GetPage(
       name: AppRoutes.quizList,

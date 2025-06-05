@@ -1,16 +1,28 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_learning_app/core/theme/app_colors..dart';
 import 'package:flutter/material.dart';
-
-import 'package:e_learning_app/models/course_model.dart';
 import 'package:shimmer/shimmer.dart';
 
+import 'package:e_learning_app/core/theme/app_colors..dart';
+
+import '../../../models/lesson_model.dart';
+
 class RecomendationCourseCard extends StatelessWidget {
-  final CourseModel course;
+  final String courseId;
+  final String imageUrl;
+  final bool isPremium;
+  final String title;
+  final String instructorId;
+  final List<LessonModel> lesson;
+
   const RecomendationCourseCard({
     super.key,
-    required this.course,
+    required this.courseId,
+    required this.imageUrl,
+    required this.isPremium,
+    required this.title,
+    required this.instructorId,
+    required this.lesson,
   });
 
   @override
@@ -44,7 +56,7 @@ class RecomendationCourseCard extends StatelessWidget {
                       top: Radius.circular(16),
                     ),
                     child: CachedNetworkImage(
-                      imageUrl: course.imageUrl,
+                      imageUrl: imageUrl,
                       height: 90,
                       width: double.maxFinite,
                       fit: BoxFit.cover,
@@ -61,7 +73,7 @@ class RecomendationCourseCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (course.isPremium)
+                  if (isPremium)
                     Positioned(
                       top: 8,
                       right: 8,
@@ -103,7 +115,7 @@ class RecomendationCourseCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      course.title,
+                      title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleSmall!.copyWith(
@@ -125,7 +137,7 @@ class RecomendationCourseCard extends StatelessWidget {
                           width: 4,
                         ),
                         Text(
-                          "Instructor ${course.instructorId}",
+                          "Instructor $instructorId",
                           style: theme.textTheme.bodySmall!.copyWith(
                             color: AppColors.secondary,
                           ),
@@ -146,7 +158,7 @@ class RecomendationCourseCard extends StatelessWidget {
                           width: 4,
                         ),
                         Text(
-                          '${course.lessons.length * 30} mins',
+                          '${lesson.length * 30} mins',
                           style: theme.textTheme.bodySmall!.copyWith(
                             color: AppColors.secondary,
                           ),

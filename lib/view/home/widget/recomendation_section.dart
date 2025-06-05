@@ -35,7 +35,14 @@ class RecomendationSection extends StatelessWidget {
             itemCount: courses.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return RecomendationCourseCard(course: courses[index]);
+              final course = courses[index];
+              return RecomendationCourseCard(
+                  courseId: course.id,
+                  imageUrl: course.imageUrl,
+                  isPremium: course.isPremium,
+                  title: course.title,
+                  instructorId: course.instructorId,
+                  lesson: course.lessons);
             },
           ),
         ),

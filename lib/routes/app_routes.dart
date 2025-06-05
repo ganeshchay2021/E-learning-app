@@ -90,8 +90,13 @@ class AppRoutes {
 
       //course list
       case courseList:
+        final args = setting.arguments as Map<String, dynamic>?;
+
         return MaterialPageRoute(
-          builder: (_) => const CourseListScreen(),
+          builder: (_) => CourseListScreen(
+            categoryId: args?['category'] as String?,
+            categoryName: args?['categoryName'] as String?,
+          ),
         );
 
       //quiz list
