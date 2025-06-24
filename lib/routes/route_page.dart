@@ -2,7 +2,7 @@ import 'package:e_learning_app/routes/app_routes.dart';
 import 'package:e_learning_app/view/auth/forgot_password.dart';
 import 'package:e_learning_app/view/auth/login_screen.dart';
 import 'package:e_learning_app/view/auth/sign_up_screen.dart';
-import 'package:e_learning_app/view/courses/widget/course_list_screen.dart';
+import 'package:e_learning_app/view/courses/course_list_screen.dart';
 import 'package:e_learning_app/view/home/home_Screen.dart';
 import 'package:e_learning_app/view/teacher/teacher_home_screen.dart';
 import 'package:e_learning_app/view/onboarding/onboarding_screen.dart';

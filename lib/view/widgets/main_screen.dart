@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:e_learning_app/bloc/navigation/navigation_bloc.dart';
-import 'package:e_learning_app/view/courses/widget/course_list_screen.dart';
+import 'package:e_learning_app/view/courses/course_list_screen.dart';
 import 'package:e_learning_app/view/home/home_screen.dart';
 import 'package:e_learning_app/view/profile/profile_screen.dart';
 import 'package:e_learning_app/view/quiz/quiz_list_screen.dart';
@@ -22,7 +22,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List<Widget> pages = [
-    HomeScreen(),
+    const HomeScreen(),
     const CourseListScreen(),
     const QuizListScreen(),
     const ProfileScreen(),
