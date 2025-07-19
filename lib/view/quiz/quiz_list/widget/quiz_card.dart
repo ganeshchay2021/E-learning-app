@@ -16,7 +16,7 @@ class QuizCard extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
-      // height: 200,
+      height: 145,
       decoration: BoxDecoration(
         color: AppColors.accent,
         borderRadius: BorderRadius.circular(16),
@@ -84,6 +84,8 @@ class QuizCard extends StatelessWidget {
           width: 5,
         ),
         Text(
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           text, style: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.secondary
           ),

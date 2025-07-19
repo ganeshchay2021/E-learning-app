@@ -41,15 +41,16 @@ class QuizListScreen extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 childCount: DummyDataServices.quizzes.length,
                 (context, index) {
                   final quiz = DummyDataServices.quizzes[index];
-                  return QuizCard(quiz: quiz, onTap: () {
-                    
-                  },);
+                  return QuizCard(
+                    quiz: quiz,
+                    onTap: () {},
+                  );
                 },
               ),
             ),

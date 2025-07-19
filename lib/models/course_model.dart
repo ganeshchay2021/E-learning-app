@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:e_learning_app/models/lesson_model.dart';
 
 class CourseModel {
@@ -18,6 +19,7 @@ class CourseModel {
   final DateTime createdAt;
   final DateTime updatedAt;
   final bool isPremium;
+  final int duration;
 
   CourseModel({
     required this.id,
@@ -37,6 +39,7 @@ class CourseModel {
     required this.createdAt,
     required this.updatedAt,
     this.isPremium = false,
+    this.duration=0,
   });
 
   factory CourseModel.fromJson(Map<String, dynamic> map) {
@@ -60,6 +63,8 @@ class CourseModel {
       createdAt: DateTime.parse(map['createdAt']),
       updatedAt: DateTime.parse(map['updatedAt']),
       isPremium: map['isPremium'] ?? false,
+      duration: map['duration'] ?? 0,
+
     );
   }
 

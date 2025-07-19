@@ -38,6 +38,7 @@ class DummyDataServices {
       rating: 4.8,
       reviewCount: 245,
       enrollmentCount: 1200,
+      duration: 160
     ),
     CourseModel(
       id: '2',
@@ -69,6 +70,7 @@ class DummyDataServices {
       reviewCount: 189,
       enrollmentCount: 890,
       isPremium: true,
+      duration: 145
     ),
     CourseModel(
       id: "3",
@@ -97,6 +99,7 @@ class DummyDataServices {
       rating: 4.7,
       reviewCount: 156,
       enrollmentCount: 750,
+      duration: 155
     ),
 
     ///form here
@@ -129,6 +132,7 @@ class DummyDataServices {
       rating: 4.9,
       reviewCount: 178,
       enrollmentCount: 560,
+      duration: 153
     ),
     CourseModel(
       id: '5',
@@ -160,6 +164,7 @@ class DummyDataServices {
       reviewCount: 145,
       enrollmentCount: 420,
       isPremium: true,
+      duration: 120
     ),
     CourseModel(
       id: '6',
@@ -190,6 +195,7 @@ class DummyDataServices {
       rating: 4.6,
       reviewCount: 98,
       enrollmentCount: 340,
+      duration: 130
     ),
     CourseModel(
       id: '7',
@@ -221,6 +227,7 @@ class DummyDataServices {
       reviewCount: 132,
       enrollmentCount: 450,
       isPremium: true,
+      duration: 125
     ),
 
     CourseModel(
@@ -251,6 +258,7 @@ class DummyDataServices {
       rating: 4.8,
       reviewCount: 167,
       enrollmentCount: 580,
+      duration: 115
     )
   ];
 
@@ -274,7 +282,7 @@ class DummyDataServices {
       isActive: true,
     ),
     QuizeModel(
-      id: '2',
+      id: '3',
       title: 'Dart Programming Quiz',
       description: 'Check your understanding of Dart programming concepts',
       timeLimit: 25,
@@ -283,7 +291,7 @@ class DummyDataServices {
       isActive: true,
     ),
     QuizeModel(
-      id: '3',
+      id: '4',
       title: 'State Management Quiz',
       description: 'Test your knowledge of Flutter state management',
       timeLimit: 20,
