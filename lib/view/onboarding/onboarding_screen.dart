@@ -116,7 +116,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         curve: Curves.easeIn,
                       );
                     } else {
-                      _onCompletedOnBoarding;
+                      _onCompletedOnBoarding();
                     }
                   },
                   child: Text(

@@ -54,7 +54,6 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   
-
   _haldleNavigation(BuildContext context) {
     if (_hasNavigated) {
       return;

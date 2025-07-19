@@ -20,7 +20,7 @@ class AuthState extends Equatable {
     return AuthState(
         userModel: userModel ?? this.userModel,
         isLoading: isLoading ?? this.isLoading,
-        error: error);
+        error: error?? this.error);
   }
 
   @override
