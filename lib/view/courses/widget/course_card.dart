@@ -135,6 +135,37 @@ class _CourseCardState extends State<CourseCard> {
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.star,
+                          size: 16,
+                          color: AppColors.primary,
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          widget.course.rating.toString(),
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: AppColors.secondary,
+                          ),
+                        ),
+                        const Spacer(),
+                        const Icon(
+                          Icons.access_time,
+                          size: 16,
+                          color: AppColors.secondary,
+                        ),
+                        const SizedBox(width: 4,),
+                        Text("${widget.course.duration} mins", style: theme.textTheme.bodySmall?.copyWith(
+                          color: AppColors.secondary
+                        ),)
+                      ],
                     )
                   ],
                 ),
